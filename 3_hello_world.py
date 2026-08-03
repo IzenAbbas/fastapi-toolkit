@@ -17,5 +17,5 @@ def about():
 
 #User route
 @app.get("/about")
-def about():
+def user():
     return {"data": "this is users data"}

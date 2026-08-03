@@ -2,7 +2,20 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-#User route
-@app.get("/users/{user_id}")
-def user(user_id:int):
-    return {"user_id": user_id}
+@app.get("/users")
+def get_users(name: str=None):
+    return {"Name": name}
+
+
+@app.get("/products")
+def get_products(limit: int=0):
+    return {"limit": limit}
+
+
+
+@app.get("/items")
+def get_items(name: str=None, price: int=0):
+    return {
+        "Name": name,
+        "Price": price
+        }
